@@ -2,12 +2,12 @@
 #define SE_FACADE_AUTOMOBIL_H
 
 #include "Motor.h"
-#include "Frontlichter.h"
+#include "Frontscheinwerfer.h"
 
 class Automobil {
 private:
     Motor motor;
-    Frontlichter frontlichter;
+    Frontscheinwerfer frontscheinwerfer;
 public:
     void schlüsseldrehen();
 };
