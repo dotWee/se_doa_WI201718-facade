@@ -6,7 +6,7 @@
 #include "Motor.h"
 #include "Frontlichter.h"
 
-void Automobil::starte() {
+void Automobil::schlüsseldrehen() {
     // Starte das Auto
     std::cout << "Versuche das Auto mit Motor und Frontlichtern zu starten..." << std::endl;            
 

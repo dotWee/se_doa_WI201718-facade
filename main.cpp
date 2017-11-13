@@ -7,7 +7,7 @@
 int main(int argc, char *argv[]) {
 
     Automobil automobil;
-    automobil.starte();
+    automobil.schlüsseldrehen();
 
     return 0;
 }

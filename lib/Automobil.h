@@ -9,7 +9,7 @@ private:
     Motor motor;
     Frontlichter frontlichter;
 public:
-    void starte();
+    void schlüsseldrehen();
 };
 
 #endif //SE_FACADE_AUTOMOBIL_H
