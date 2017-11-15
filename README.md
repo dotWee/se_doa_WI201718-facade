@@ -51,27 +51,25 @@ void Automobil::schlüsseldrehen() {
 
 Ein aktueller C++-Compiler (`g++`) und das GNU Make Tool (`make`) werden vorausgesetzt.
 
-Der Befehl `make` startet die Kompilierung und führt die generierten Binaries im Anschluss aus.
+Zu Beginnt wird mit `$ make automobil` die Kompilierung des Quellcodes gestartet und im Anschluss die generierten Binaries mit den nötigen Rechten für eine Ausführung versehen.
+
+Zuletzt wird mit `$ ./Automobil` die Ausführung gestartet.
 
 ### Beispielausführung
 
-```sh
-Lukas-MacBook:Beispielcode lukas$ make
+```bash
+Lukas-MacBook:se_doa_WI201718-facade lukas$ make automobil
 g++ -c lib/Automobil.cpp lib/Frontscheinwerfer.cpp lib/Motor.cpp main.cpp
 g++ Automobil.o Frontscheinwerfer.o Motor.o main.o -o Automobil
 chmod +x Automobil
-./Automobil
 
+Lukas-MacBook:se_doa_WI201718-facade lukas$ ./Automobil
 Versuche das Auto mit Motor und Frontscheinwerfer zu starten...
 Versuche den Motor zu zünden...
 Motor wurde gezündet.
 Versuche die Frontscheinwerfer einzuschalten...
 Frontscheinwerfer wurden eingeschaltet.
 Auto wurde gestartet!
-
-rm -f *.o
-rm -f *.out
-rm -f Automobil
 ```
 
 ## Referenzen
