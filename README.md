@@ -15,6 +15,8 @@ Dieses Projekt stellt eine Beispiel-Implementierung in C++ des Entwurfsmusters *
 
 ## Komponenten
 
+![Klassendiagramm](uml/Klassendiagramm.jpeg)
+
 ### [Motor](lib/Motor.h)
 
 Die Klasse [Motor](lib/Motor.h) soll einen mechanischen Motor symbolisieren, welcher durch einen Aufruf der Funktion `Motor::zünden()` zum Starten gebracht werden.
