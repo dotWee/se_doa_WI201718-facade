@@ -1,8 +1,8 @@
 all: automobil run clean
 
 automobil:
-	g++ -c lib/Automobil.cpp lib/Frontscheinwerfer.cpp lib/Motor.cpp main.cpp
-	g++ Automobil.o Frontscheinwerfer.o Motor.o main.o -o Automobil
+	g++ -Wall -Og -c lib/Automobil.cpp lib/Frontscheinwerfer.cpp lib/Motor.cpp main.cpp
+	g++ -Wall -Og Automobil.o Frontscheinwerfer.o Motor.o main.o -o Automobil
 	chmod +x Automobil
 
 run:
