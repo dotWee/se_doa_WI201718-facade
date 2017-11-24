@@ -9,6 +9,7 @@ Dieses Projekt stellt eine Beispiel-Implementierung in C++ des Entwurfsmusters *
     - [Frontscheinwerfer](#frontscheinwerfer)
     - [Automobil](#automobil)
 2. [Ausführung](#ausführung)
+    - [Ablaufdiagramm](#ablaufdiagramm)
     - [Voraussetzungen](#voraussetzungen)
     - [Beispielausführung](#beispielausführung)
 3. [Referenzen](#referenzen)
@@ -48,6 +49,12 @@ void Automobil::schlüsseldrehen() {
 ```
 
 ## Ausführung
+
+### Ablaufdiagramm
+
+Ablauf mit Fassade | Ablauf ohne Fassade
+--- | ---
+![Ablauf mit Fassade](uml/AblaufdiagrammMitFassade.jpeg) | ![Ablauf ohne Fassade](uml/AblaufdiagrammOhneFassade.jpeg)
 
 ### Voraussetzungen
 
