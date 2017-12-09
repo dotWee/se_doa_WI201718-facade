@@ -4,7 +4,10 @@
 
 #include "Motor.h"
 
+using std::cout;
+using std::endl;
+
 void Motor::zünden() {
     // Zünde den Motor
-    std::cout << "Motor wurde gezündet." << std::endl;    
+    cout << "Motor wurde gezündet." << endl;    
 }

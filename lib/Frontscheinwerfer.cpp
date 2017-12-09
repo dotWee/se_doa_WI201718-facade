@@ -4,7 +4,11 @@
 
 #include "Frontscheinwerfer.h"
 
+using std::cout;
+using std::endl;
+
 void Frontscheinwerfer::einschalten() {
+
     // Schalte die Frontscheinwerfer ein
-    std::cout << "Frontscheinwerfer wurden eingeschaltet." << std::endl;
+    cout << "Frontscheinwerfer wurden eingeschaltet." << endl;
 }

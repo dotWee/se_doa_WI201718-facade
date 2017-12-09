@@ -4,18 +4,22 @@
 
 #include "Automobil.h"
 #include "Motor.h"
+#include "Frontscheinwerfer.h"
+
+using std::cout;
+using std::endl;
 
 void Automobil::schlüsseldrehen() {
     // Starte das Auto
-    std::cout << "Versuche das Auto mit Motor und Frontscheinwerfer zu starten..." << std::endl;            
+    cout << "Versuche das Auto mit Motor und Frontscheinwerfer zu starten..." << endl;            
 
     // Zünde den Motor
-    std::cout << "Versuche den Motor zu zünden..." << std::endl;        
+    cout << "Versuche den Motor zu zünden..." << endl;        
     motor.zünden();
 
     // Schalte die Frontscheinwerfer ein
-    std::cout << "Versuche die Frontscheinwerfer einzuschalten..." << std::endl;        
+    cout << "Versuche die Frontscheinwerfer einzuschalten..." << endl;        
     frontscheinwerfer.einschalten();
 
-    std::cout << "Auto wurde gestartet!" << std::endl;    
+    cout << "Auto wurde gestartet!" << endl;    
 }
