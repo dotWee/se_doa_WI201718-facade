@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "lib/Automobil.h"
+#include "Automobil.h"
 
 int main(int argc, char *argv[]) {
 
