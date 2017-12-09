@@ -2,12 +2,21 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Automobil.h"
+#include "ManuellerFahrer.h"
+#include "FaulerFahrer.h"
+
+using namespace std;
 
 int main(int argc, char *argv[]) {
 
-    Automobil automobil;
-    automobil.schlüsseldrehen();
+    cout << "-------------------------------------" << endl;
+    ManuellerFahrer manuellerFahrer;
+    manuellerFahrer.starten();
 
+    cout << "-------------------------------------" << endl;    
+    FaulerFahrer faulerFahrer;
+    faulerFahrer.starten();
+
+    cout << "-------------------------------------" << endl;    
     return 0;
 }

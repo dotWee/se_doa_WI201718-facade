@@ -1,5 +1,5 @@
 SRC_PATH=./src
-SRC_FILES=src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp src/main.cpp
+SRC_FILES=src/main.cpp src/ManuellerFahrer.cpp src/FaulerFahrer.cpp src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp
 
 OUT_BINARY=Automobil
 GCC_FLAGS=-Wall
