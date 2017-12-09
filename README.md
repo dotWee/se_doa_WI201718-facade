@@ -60,18 +60,19 @@ Ablauf mit Fassade | Ablauf ohne Fassade
 
 Ein aktueller C++-Compiler (`g++`) und das GNU Make Tool (`make`) werden vorausgesetzt.
 
-Zu Beginnt wird mit `$ make automobil` die Kompilierung des Quellcodes gestartet und im Anschluss die generierten Binaries mit den nötigen Rechten für eine Ausführung versehen.
+Zu Beginnt wird mit `$ make executable` die Kompilierung des Quellcodes gestartet und im Anschluss die generierten Binaries mit den nötigen Rechten für eine Ausführung versehen.
 
-Zuletzt wird mit `$ ./Automobil` die Ausführung gestartet.
+Zuletzt wird mit `$ make run` die Ausführung gestartet.
 
 ### Beispielausführung
 
 ```bash
 Lukas-MacBook:se_doa_WI201718-facade lukas$ make automobil
-g++ -c lib/Automobil.cpp lib/Frontscheinwerfer.cpp lib/Motor.cpp main.cpp
-g++ Automobil.o Frontscheinwerfer.o Motor.o main.o -o Automobil
+g++ -Wall -I./src src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp src/main.cpp -o Automobil
 chmod +x Automobil
+```
 
+```bash
 Lukas-MacBook:se_doa_WI201718-facade lukas$ ./Automobil
 Versuche das Auto mit Motor und Frontscheinwerfer zu starten...
 Versuche den Motor zu zünden...

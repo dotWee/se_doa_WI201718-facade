@@ -1,14 +1,17 @@
-all: automobil run clean
+SRC_PATH=./src
+SRC_FILES=src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp src/main.cpp
 
-automobil:
-	g++ -Wall -Og -c src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp src/main.cpp
-	g++ -Wall -Og Automobil.o Frontscheinwerfer.o Motor.o main.o -o Automobil
-	chmod +x Automobil
+OUT_BINARY=Automobil
+GCC_FLAGS=-Wall
+
+all: executable run clean
+
+executable:
+	g++ ${GCC_FLAGS} -I${SRC_PATH} ${SRC_FILES} -o ${OUT_BINARY}
+	chmod +x ${OUT_BINARY}
 
 run:
-	./Automobil
+	./${OUT_BINARY}
 
 clean:
-	$(RM) *.o
-	$(RM) *.out
-	$(RM) Automobil
+	$(RM) ${OUT_BINARY}
