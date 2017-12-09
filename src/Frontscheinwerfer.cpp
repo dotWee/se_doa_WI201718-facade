@@ -10,5 +10,5 @@ using std::endl;
 void Frontscheinwerfer::einschalten() {
 
     // Schalte die Frontscheinwerfer ein
-    cout << "Frontscheinwerfer wurden eingeschaltet." << endl;
+    cout << "Frontscheinwerfer: Frontscheinwerfer wurden eingeschaltet." << endl;
 }

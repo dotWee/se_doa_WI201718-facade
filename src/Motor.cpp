@@ -9,5 +9,5 @@ using std::endl;
 
 void Motor::zünden() {
     // Zünde den Motor
-    cout << "Motor wurde gezündet." << endl;    
+    cout << "Motor: Motor wurde gezündet." << endl;    
 }
