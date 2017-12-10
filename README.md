@@ -17,7 +17,8 @@ Dieses Projekt stellt eine Beispiel-Implementierung in C++ des Entwurfsmusters *
 
 ## Komponenten
 
-![Klassendiagramm](uml/Klassendiagramm.jpeg)
+![Klassendiagramm](uml/Klassendiagramm.png)
+![Typenhierarchie](uml/Typenhierarchie.png)
 
 ### [Motor](src/Motor.h)
 
@@ -112,9 +113,9 @@ public:
 
 ### Ablaufdiagramm
 
-Ablauf mit Fassade | Ablauf ohne Fassade
+Ablauf "fauler" Fahrer | Ablauf "manueller" Fahrer
 --- | ---
-![Ablauf mit Fassade](uml/AblaufdiagrammMitFassade.jpeg) | ![Ablauf ohne Fassade](uml/AblaufdiagrammOhneFassade.jpeg)
+![Ablauf_01](uml/Ablauf-FaulerFahrer.png) | ![Ablauf_02](uml/Ablauf-ManuellerFahrer.png)
 
 ### Voraussetzungen
 
@@ -127,19 +128,27 @@ Zuletzt wird mit `$ make run` die Ausführung gestartet.
 ### Beispielausführung
 
 ```bash
-Lukas-MacBook:se_doa_WI201718-facade lukas$ make automobil
-g++ -Wall -I./src src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp src/main.cpp -o Automobil
+Lukas-MacBook:se_doa_WI201718-facade lukas$ make
+g++ -Wall -I./src src/main.cpp src/ManuellerFahrer.cpp src/FaulerFahrer.cpp src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp -o Automobil
 chmod +x Automobil
-```
-
-```bash
-Lukas-MacBook:se_doa_WI201718-facade lukas$ ./Automobil
-Versuche das Auto mit Motor und Frontscheinwerfer zu starten...
-Versuche den Motor zu zünden...
-Motor wurde gezündet.
-Versuche die Frontscheinwerfer einzuschalten...
-Frontscheinwerfer wurden eingeschaltet.
-Auto wurde gestartet!
+./Automobil
+-------------------------------------
+ManuellerFahrer: Beginne das Auto zu starten...
+ManuellerFahrer: Versuche den Motor zu zünden...
+Motor: Motor wurde gezündet.ManuellerFahrer: Versuche die Frontscheinwerfer einzuschalten...
+Frontscheinwerfer: Frontscheinwerfer wurden eingeschaltet.
+ManuellerFahrer: Motor und Frontscheinwerfer gestartet!
+-------------------------------------
+FaulerFahrer: Beginne das Auto zu starten...
+Automobil: Versuche das Auto mit Motor und Frontscheinwerfer zu starten...
+Automobil: Versuche den Motor zu zünden...
+Motor: Motor wurde gezündet.
+Automobil: Versuche die Frontscheinwerfer einzuschalten...
+Frontscheinwerfer: Frontscheinwerfer wurden eingeschaltet.
+Automobil: Auto wurde gestartet!
+FaulerFahrer: Motor und Frontscheinwerfer gestartet!
+-------------------------------------
+rm -f Automobil
 ```
 
 ## Referenzen
