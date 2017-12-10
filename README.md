@@ -8,6 +8,7 @@ Dieses Projekt stellt eine Beispiel-Implementierung in C++ des Entwurfsmusters *
     - [Motor](#motor)
     - [Frontscheinwerfer](#frontscheinwerfer)
     - [Automobil](#automobil)
+    - [Fahrer](#fahrer)
 2. [Ausführung](#ausführung)
     - [Ablaufdiagramm](#ablaufdiagramm)
     - [Voraussetzungen](#voraussetzungen)
@@ -18,15 +19,15 @@ Dieses Projekt stellt eine Beispiel-Implementierung in C++ des Entwurfsmusters *
 
 ![Klassendiagramm](uml/Klassendiagramm.jpeg)
 
-### [Motor](lib/Motor.h)
+### [Motor](src/Motor.h)
 
-Die Klasse [Motor](lib/Motor.h) soll einen mechanischen Motor symbolisieren, welcher durch einen Aufruf der Funktion `Motor::zünden()` zum Starten gebracht werden.
+Die Klasse [Motor](src/Motor.h) soll einen mechanischen Motor symbolisieren, welcher durch einen Aufruf der Funktion `Motor::zünden()` zum Starten gebracht werden.
 
-### [Frontscheinwerfer](lib/Frontscheinwerfer.h)
+### [Frontscheinwerfer](src/Frontscheinwerfer.h)
 
-Die Klasse [Frontscheinwerfer](lib/Frontscheinwerfer.h) ist eine fiktive Komponente, welche durch die Schnittstelle `Frontscheinwerfer::einschalten()` angesprochen werden kann.
+Die Klasse [Frontscheinwerfer](src/Frontscheinwerfer.h) ist eine fiktive Komponente, welche durch die Schnittstelle `Frontscheinwerfer::einschalten()` angesprochen werden kann.
 
-### [Automobil](lib/Automobil.h)
+### [Automobil](src/Automobil.h)
 
 Die Klasse _Automobil_ soll ein Modell eines Auto symbolisieren, welches durch einen Aufruf der Funktion `Automobil::schlüsseldrehen()` gestartet werden kann. Dieses fiktionale Auto besteht aus mehreren Bestandteilen, unteranderem einem [Motor](#motor) und [Frontscheinwerfer](#frontscheinwerfer). Bim Drehen des Autoschlüssels wird der Motor gezündet und die Frontscheinwerfer werden eingeschaltet.
 
@@ -46,6 +47,65 @@ void Automobil::schlüsseldrehen() {
     [...]
     // Auto wurde gestartet!
 }
+```
+
+### [Fahrer](src/Fahrer.h)
+
+Das Fahrer-Modell soll abstrakte Clients simulieren, welche auf verschiedene Zugriffsarten die Komponenten [Motor](#motor) und [Frontscheinwerfer](#frontscheinwerfer) anprechen sowie aktivieren.
+
+#### 1. [Der "manuelle" Fahrer](src/ManuelleFahrer.h)
+
+Der "manuelle" Fahrer spricht die Komponenten [Motor](#motor) und [Frontscheinwerfer](#frontscheinwerfer) direkt an, überprüft deren Status selbst und hat volle Kontrolle über deren Schnittstellen.
+
+```cpp
+#include "Fahrer.h"
+#include "Motor.h"
+#include "Frontscheinwerfer.h"
+
+class ManuellerFahrer : public Fahrer {
+private:
+    Motor motor;
+    Frontscheinwerfer frontscheinwerfer;
+public:
+    void starten() {
+        cout << "ManuellerFahrer: Beginne das Auto zu starten..." << endl;
+
+        // Zünde den Motor
+        cout << "ManuellerFahrer: Versuche den Motor zu zünden..." << endl;
+        motor.zünden();
+
+        // Schalte die Frontscheinwerfer ein
+        cout << "ManuellerFahrer: Versuche die Frontscheinwerfer einzuschalten..." << endl;
+        frontscheinwerfer.einschalten();
+
+        // Läuft
+        cout << "ManuellerFahrer: Motor und Frontscheinwerfer gestartet!" << endl;
+    }
+};
+```
+
+#### 2. [Der "faule" Fahrer](src/FauleFahrer.h)
+
+Der "faule" Fahrer spricht über die **Fassadenklasse** [Automobil](src/Automobil.h) die Komponenten [Motor](#motor) und [Frontscheinwerfer](#frontscheinwerfer) an, es findet keine direkte Kommunikation zwischen den Schnittstellen statt.
+
+```cpp
+#include "Fahrer.h"
+#include "Automobil.h"
+
+class FaulerFahrer : public Fahrer {
+private:
+    Automobil automobil;
+public:
+    void starten() {
+        cout << "FaulerFahrer: Beginne das Auto zu starten..." << endl;
+
+        // Schlüssel drehen
+        automobil.schlüsseldrehen();
+
+        // Läuft
+        cout << "FaulerFahrer: Motor und Frontscheinwerfer gestartet!" << endl;
+    }
+};
 ```
 
 ## Ausführung

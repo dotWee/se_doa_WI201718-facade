@@ -8,6 +8,7 @@ using std::cout;
 using std::endl;
 
 void ManuellerFahrer::starten() {
+    cout << "ManuellerFahrer: Beginne das Auto zu starten..." << endl; 
 
     // Zünde den Motor
     cout << "ManuellerFahrer: Versuche den Motor zu zünden..." << endl;        
@@ -19,5 +20,4 @@ void ManuellerFahrer::starten() {
 
     // Läuft
     cout << "ManuellerFahrer: Motor und Frontscheinwerfer gestartet!" << endl;
-    
 }
