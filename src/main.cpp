@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "ManuellerFahrer.h"
-#include "FaulerFahrer.h"
+#include "AutomatischerFahrer.h"
 
 using namespace std;
 
@@ -14,8 +14,8 @@ int main(int argc, char *argv[]) {
     manuellerFahrer.starten();
 
     cout << "-------------------------------------" << endl;    
-    FaulerFahrer faulerFahrer;
-    faulerFahrer.starten();
+    AutomatischerFahrer automatischerFahrer;
+    automatischerFahrer.starten();
 
     cout << "-------------------------------------" << endl;    
     return 0;

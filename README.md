@@ -85,26 +85,26 @@ public:
 };
 ```
 
-#### 2. [Der "faule" Fahrer](src/FauleFahrer.h)
+#### 2. [Der "automatische" Fahrer](src/AutomatischeFahrer.h)
 
-Der "faule" Fahrer spricht über die **Fassadenklasse** [Automobil](src/Automobil.h) die Komponenten [Motor](#motor) und [Frontscheinwerfer](#frontscheinwerfer) an, es findet keine direkte Kommunikation zwischen den Schnittstellen statt.
+Der "automatische" Fahrer spricht über die **Fassadenklasse** [Automobil](src/Automobil.h) die Komponenten [Motor](#motor) und [Frontscheinwerfer](#frontscheinwerfer) an, es findet keine direkte Kommunikation zwischen den Schnittstellen statt.
 
 ```cpp
 #include "Fahrer.h"
 #include "Automobil.h"
 
-class FaulerFahrer : public Fahrer {
+class AutomatischerFahrer : public Fahrer {
 private:
     Automobil automobil;
 public:
     void starten() {
-        cout << "FaulerFahrer: Beginne das Auto zu starten..." << endl;
+        cout << "AutomatischerFahrer: Beginne das Auto zu starten..." << endl;
 
         // Schlüssel drehen
         automobil.schlüsseldrehen();
 
         // Läuft
-        cout << "FaulerFahrer: Motor und Frontscheinwerfer gestartet!" << endl;
+        cout << "AutomatischerFahrer: Motor und Frontscheinwerfer gestartet!" << endl;
     }
 };
 ```
@@ -113,9 +113,9 @@ public:
 
 ### Ablaufdiagramm
 
-Ablauf "fauler" Fahrer | Ablauf "manueller" Fahrer
+Ablauf "automatischer" Fahrer | Ablauf "manueller" Fahrer
 --- | ---
-![Ablauf_01](uml/Ablauf-FaulerFahrer.png) | ![Ablauf_02](uml/Ablauf-ManuellerFahrer.png)
+![AblaufdiagrammAutomatisch](uml/AblaufdiagrammAutomatisch.png) | ![AblaufdiagrammManuell](uml/AblaufdiagrammManuell.png)
 
 ### Voraussetzungen
 
@@ -129,7 +129,7 @@ Zuletzt wird mit `$ make run` die Ausführung gestartet.
 
 ```bash
 Lukas-MacBook:se_doa_WI201718-facade lukas$ make
-g++ -Wall -I./src src/main.cpp src/ManuellerFahrer.cpp src/FaulerFahrer.cpp src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp -o Automobil
+g++ -Wall -I./src src/main.cpp src/ManuellerFahrer.cpp src/AutomatischerFahrer.cpp src/Automobil.cpp src/Frontscheinwerfer.cpp src/Motor.cpp -o Automobil
 chmod +x Automobil
 ./Automobil
 -------------------------------------
@@ -139,14 +139,14 @@ Motor: Motor wurde gezündet.ManuellerFahrer: Versuche die Frontscheinwerfer ein
 Frontscheinwerfer: Frontscheinwerfer wurden eingeschaltet.
 ManuellerFahrer: Motor und Frontscheinwerfer gestartet!
 -------------------------------------
-FaulerFahrer: Beginne das Auto zu starten...
+AutomatischerFahrer: Beginne das Auto zu starten...
 Automobil: Versuche das Auto mit Motor und Frontscheinwerfer zu starten...
 Automobil: Versuche den Motor zu zünden...
 Motor: Motor wurde gezündet.
 Automobil: Versuche die Frontscheinwerfer einzuschalten...
 Frontscheinwerfer: Frontscheinwerfer wurden eingeschaltet.
 Automobil: Auto wurde gestartet!
-FaulerFahrer: Motor und Frontscheinwerfer gestartet!
+AutomatischerFahrer: Motor und Frontscheinwerfer gestartet!
 -------------------------------------
 rm -f Automobil
 ```
